@@ -39,8 +39,8 @@ function swg_auth_run(){
     // If we're here, the swg-auth action was requested but no user_name and user_password were provided. That's weird... Don't return anything
     die;
   }
-  // Check if the swgadminlevel action is requested
-  if($_GET['action'] == 'swgadminlevel'){
+  // Check if the swg-auth-admin-level action is requested
+  if($_GET['action'] == 'swg-auth-admin-level'){
     // Check if a user_name is provided
     if($_POST['user_name']){
       // Look up the user
@@ -57,7 +57,7 @@ function swg_auth_run(){
       echo json_encode($response);
       die;
     }
-  // If we're here, the swgadminlevel action was requested by no user_name was provided. Don't return anything.
+  // If we're here, the swg-auth-admin-level action was requested by no user_name was provided. Don't return anything.
   die;
   }
 }
